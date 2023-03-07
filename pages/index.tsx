@@ -15,13 +15,13 @@ interface ScreenSize{
 
 export default function Home() {
 
-  const {height, width} =useWindowsDimensions();
+  const {height, width} = useWindowsDimensions();
   
   const isScreenSmall = width<1200 && height<700 ;
 
   return (
     <>
-    <motion.div className="grid grid-rows-3 grid-flow-col w-screen h-screen p-28 bg-blue-100" >
+    <motion.div className="grid grid-rows-3 grid-flow-col w-screen h-screen p-10 bg-blue-100" >
       {isScreenSmall && 
       <motion.div className="bg-red-300 fixed justify-center items-center text-center inset-1/4 h-fit z-40" >
           <h1 className='text-4xl font-bold underline underline-offset-4 pt-4'>Hey, your screen is too small, please maximise your window</h1>
