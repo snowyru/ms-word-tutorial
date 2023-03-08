@@ -4,9 +4,9 @@ import Image from 'next/image';
 import { Inter } from "next/font/google";
 import styles from '@/styles/Home.module.css';
 import {motion, useInView} from 'framer-motion';
-import WordHome from '../public/WordHome.png';
 import { useEffect, useRef, useState } from 'react';
-import useWindowsDimensions from '../comps/useWindowDimensions';
+import useWindowsDimensions from '@/comps/useWindowDimensions';
+import Container from '@/comps/container';
 
 declare global {
   interface CSSStyleDeclaration {
@@ -44,15 +44,11 @@ export default function Home() {
       }
     {/* Instruction side card */}
       <motion.div className=' relative border-blue-500 border-4 p-4 '>
-        <h1 className='text-4xl font-bold underline p-2' >Instructions :</h1>
-          <p className='text-2xl p-2'>1. Create a header</p>
+        {/* <h1 className='text-4xl font-bold underline p-2' >Instructions :</h1>
+          <p className='text-2xl p-2'>1. Create a header</p> */}
       </motion.div>
     {/* Word env */}
-      <motion.div className=" row-span-3 col-span-8 relative border-red-500 border-4 " 
-        style={{}}
-      >
-        <Image src={WordHome} fill alt="..." />
-      </motion.div>
+      <Container/>
     </motion.div>
     </>
 
