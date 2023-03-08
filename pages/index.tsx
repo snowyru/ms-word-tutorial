@@ -8,16 +8,26 @@ import WordHome from '../public/WordHome.png';
 import { useEffect, useRef, useState } from 'react';
 import useWindowsDimensions from '../comps/useWindowDimensions';
 
-interface ScreenSize{
-  width: number;
-  height: number;
+declare global {
+  interface CSSStyleDeclaration {
+    zoom: string;
+  }
 }
 
 export default function Home() {
 
   const {height, width} = useWindowsDimensions();
-  
   const isScreenSmall = width<1200 && height<700 ;
+
+  // useEffect(() => {
+  //   if (isScreenSmall) {
+  //     const zoom = Math.min(width / 1200, height / 700)*100
+  //     console.log(zoom);
+  //     document.body.style.zoom = zoom.toString()+"%";
+  //   }else{
+  //     document.body.style.zoom = '100%';
+  //     }
+  // })
 
   return (
     <>
