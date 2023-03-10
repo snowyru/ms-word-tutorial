@@ -17,7 +17,7 @@ declare global {
 export default function Home() {
 
   const {height, width} = useWindowsDimensions();
-  const isScreenSmall = width<1200 && height<700 ;
+  const isScreenSmall = width<1200 || height<560 ;
 
   // useEffect(() => {
   //   if (isScreenSmall) {
@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <>
-    <motion.div className="grid grid-rows-3 grid-flow-col w-screen h-screen p-10 bg-blue-100" >
+    <motion.div className="grid grid-flow-col w-screen h-screen p-10 bg-blue-100" >
       {isScreenSmall && 
       <motion.div className="bg-red-300 fixed justify-center items-center text-center inset-1/4 h-fit z-40" >
           <h1 className='text-4xl font-bold underline underline-offset-4 pt-4'>Hey, your screen is too small, please maximise your window</h1>
@@ -43,12 +43,15 @@ export default function Home() {
       </motion.div>
       }
     {/* Instruction side card */}
-      <motion.div className=' relative border-blue-500 border-4 p-4 '>
-        {/* <h1 className='text-4xl font-bold underline p-2' >Instructions :</h1>
-          <p className='text-2xl p-2'>1. Create a header</p> */}
+      <motion.div className='h-fit relative border-blue-500 border-4 p-4 '>
+        <h1 className='text-xl font-bold underline p-2' >Instructions :</h1>
+          <p className='p-2'>1. Create a header</p>
+          <p className='p-2'>2. lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
       </motion.div>
     {/* Word env */}
-      <Container/>
+     <motion.div className='w-[920px] h-[500px] relative border-red-500 border-4 bg-white'>
+        <Container/>
+     </motion.div>
     </motion.div>
     </>
 
